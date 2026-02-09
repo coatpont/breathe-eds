@@ -1,0 +1,41 @@
+{
+  "variantName": "cards-breathe",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-06T14:01:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://breathe-app.com/",
+    "originPage": "Breathe app landing page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "media-gallery",
+    "imagePattern": "large",
+    "structure": "thumbnail image + title + description"
+  },
+  "contentPattern": {
+    "structure": "image | bold title + description text",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "media gallery grids with thumbnails",
+      "feature showcase cards with images",
+      "product catalog grids",
+      "app feature galleries"
+    ],
+    "notSuitableFor": [
+      "text-only card layouts",
+      "cards with complex CTAs",
+      "single featured card layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-06T14:01:00.000Z"
+  }
+}

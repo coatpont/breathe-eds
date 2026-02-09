@@ -1,0 +1,82 @@
+.columns-apphero > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 40px 0 0;
+}
+
+.columns-apphero h1 {
+  margin-top: 16px;
+  margin-bottom: 18px;
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.columns-apphero p {
+  margin: 0 0 18px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.columns-apphero img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: var(--radius-card);
+}
+
+.columns-apphero > div > div {
+  order: 1;
+}
+
+.columns-apphero > div > .columns-apphero-img-col {
+  order: 0;
+  text-align: center;
+}
+
+.columns-apphero > div > .columns-apphero-img-col img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* App store badges */
+.columns-apphero a:any-link {
+  display: inline-block;
+  margin-right: 12px;
+  margin-bottom: 8px;
+}
+
+.columns-apphero a:any-link img {
+  height: 48px;
+  width: auto;
+  max-width: none;
+  border-radius: 0;
+}
+
+.columns-apphero a:hover {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+@media (width >= 900px) {
+  .columns-apphero > div {
+    align-items: center;
+    flex-direction: row;
+    gap: 60px;
+    padding: 60px 0 0;
+  }
+
+  .columns-apphero > div > div {
+    flex: 1;
+    order: unset;
+  }
+
+  .columns-apphero > div > .columns-apphero-img-col {
+    order: unset;
+  }
+
+  .columns-apphero > div > .columns-apphero-img-col img {
+    max-width: 100%;
+  }
+}
