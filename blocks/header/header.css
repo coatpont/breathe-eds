@@ -152,15 +152,36 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
   line-height: 1;
 }
 
+header .nav-brand .default-content-wrapper {
+  display: grid;
+  grid-template-columns: 36px auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 0 10px;
+}
+
+header .nav-brand p:first-child {
+  grid-column: 2;
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+}
+
+header .nav-brand p:last-child {
+  grid-column: 2;
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.6;
+}
+
 header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
 }
 
 /* sections */
