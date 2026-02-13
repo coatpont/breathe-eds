@@ -26,6 +26,42 @@
   border-radius: var(--radius-card);
 }
 
+/* Carousel */
+.columns-apphero-carousel {
+  position: relative;
+  aspect-ratio: 617 / 1342;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #000;
+  max-width: 320px;
+  margin: 0 auto;
+  box-shadow: 0 4px 24px rgb(0 0 0 / 30%);
+  border: 1px solid rgb(255 255 255 / 8%);
+  padding: 8px;
+}
+
+.columns-apphero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.columns-apphero-slide.is-active {
+  opacity: 1;
+}
+
+.columns-apphero-carousel img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  object-position: center top;
+  border-radius: 20px;
+}
+
 .columns-apphero > div > div {
   order: 1;
 }
@@ -77,6 +113,10 @@
   }
 
   .columns-apphero > div > .columns-apphero-img-col img {
+    max-width: 100%;
+  }
+
+  .columns-apphero-carousel {
     max-width: 100%;
   }
 }
