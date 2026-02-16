@@ -182,8 +182,7 @@ export default async function decorate(block) {
 
   languages.forEach((lang) => {
     const option = document.createElement('option');
-    const prefix = lang.code ? `/content/${lang.code}` : '/content';
-    option.value = `${prefix}/`;
+    option.value = lang.code ? `/${lang.code}/` : '/';
     if (lang.code === currentCode) option.selected = true;
     option.textContent = lang.label;
     select.append(option);
