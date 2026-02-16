@@ -1,5 +1,6 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
+import languages from './languages.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -163,6 +164,47 @@ export default async function decorate(block) {
   // prevent mobile nav behavior on window resize
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
+
+  // language switcher
+  const navTools = nav.querySelector('.nav-tools');
+  const langSwitch = document.createElement('div');
+  langSwitch.className = 'lang-switch';
+  const label = document.createElement('label');
+  label.setAttribute('for', 'lang-switch');
+  label.textContent = 'Language';
+  const select = document.createElement('select');
+  select.id = 'lang-switch';
+  select.setAttribute('aria-label', 'Language');
+
+  const pathSegments = window.location.pathname.replace(/^\/content/, '').split('/').filter(Boolean);
+  const currentLang = languages.find((l) => l.code && l.code === pathSegments[0]);
+  const currentCode = currentLang ? currentLang.code : '';
+
+  languages.forEach((lang) => {
+    const option = document.createElement('option');
+    const prefix = lang.code ? `/content/${lang.code}` : '/content';
+    option.value = `${prefix}/`;
+    if (lang.code === currentCode) option.selected = true;
+    option.textContent = lang.label;
+    select.append(option);
+  });
+
+  select.addEventListener('change', () => {
+    window.location.href = select.value;
+  });
+
+  langSwitch.append(label, select);
+  if (navTools) {
+    navTools.querySelector('.default-content-wrapper')?.append(langSwitch);
+  } else {
+    const toolsDiv = document.createElement('div');
+    toolsDiv.classList.add('nav-tools');
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('default-content-wrapper');
+    wrapper.append(langSwitch);
+    toolsDiv.append(wrapper);
+    nav.append(toolsDiv);
+  }
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';

@@ -304,3 +304,45 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools {
   grid-area: tools;
 }
+
+/* language switcher */
+header nav .lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header nav .lang-switch label {
+  font-size: var(--body-font-size-xs);
+  color: rgb(255 255 255 / 72%);
+}
+
+header nav .lang-switch select {
+  background-color: rgb(15 31 52 / 90%);
+  color: var(--color-ink);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 12px;
+  padding: 6px 10px;
+  font-size: var(--body-font-size-s);
+  font-family: var(--body-font-family);
+  cursor: pointer;
+}
+
+header nav .lang-switch select:focus {
+  outline: 2px solid var(--color-sun);
+  outline-offset: 1px;
+}
+
+header nav[aria-expanded='false'] .nav-tools {
+  display: none;
+}
+
+@media (width >= 900px) {
+  header nav .nav-tools {
+    display: block;
+  }
+
+  header nav[aria-expanded='false'] .nav-tools {
+    display: block;
+  }
+}
