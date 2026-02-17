@@ -208,6 +208,17 @@ export default async function decorate(block) {
     nav.append(toolsDiv);
   }
 
+  // rewrite nav links for current language
+  if (currentCode) {
+    nav.querySelectorAll('a[href]').forEach((a) => {
+      const href = a.getAttribute('href');
+      // rewrite absolute paths that don't already have a language prefix
+      if (href.startsWith('/') && !href.startsWith(`/${currentCode}/`)) {
+        a.setAttribute('href', `/${currentCode}${href}`);
+      }
+    });
+  }
+
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
