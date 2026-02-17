@@ -128,12 +128,17 @@ export default async function decorate(block) {
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
-  // strip /content prefix from nav links (DA documents may include it)
+  // normalize nav links: strip /content prefix and ensure trailing slash
   nav.querySelectorAll('a[href]').forEach((a) => {
-    const href = a.getAttribute('href');
+    let href = a.getAttribute('href');
     if (href.startsWith('/content/') || href.startsWith('/content#')) {
-      a.setAttribute('href', href.replace(/^\/content/, ''));
+      href = href.replace(/^\/content/, '');
     }
+    // EDS requires trailing slash for page links (folder/index routing)
+    if (href.startsWith('/') && !href.endsWith('/') && !href.includes('#') && !href.includes('.')) {
+      href = `${href}/`;
+    }
+    a.setAttribute('href', href);
   });
 
   const classes = ['brand', 'sections', 'tools'];
