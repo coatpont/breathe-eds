@@ -154,6 +154,18 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  // wrap brand content in a clickable link to home page
+  const brandWrapper = navBrand.querySelector('.default-content-wrapper');
+  if (brandWrapper) {
+    const brandAnchor = document.createElement('a');
+    brandAnchor.href = '/';
+    brandAnchor.className = 'brand-link';
+    while (brandWrapper.firstChild) {
+      brandAnchor.append(brandWrapper.firstChild);
+    }
+    brandWrapper.append(brandAnchor);
+  }
+
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
