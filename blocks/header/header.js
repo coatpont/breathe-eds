@@ -128,6 +128,14 @@ export default async function decorate(block) {
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
+  // strip /content prefix from nav links (DA documents may include it)
+  nav.querySelectorAll('a[href]').forEach((a) => {
+    const href = a.getAttribute('href');
+    if (href.startsWith('/content/') || href.startsWith('/content#')) {
+      a.setAttribute('href', href.replace(/^\/content/, ''));
+    }
+  });
+
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
     const section = nav.children[i];
