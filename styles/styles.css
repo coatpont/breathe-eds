@@ -65,6 +65,7 @@
 
 @media (width >= 900px) {
   :root {
+    --nav-height: 110px;
     --heading-font-size-xxl: 38px;
     --heading-font-size-xl: 29px;
     --heading-font-size-l: 24px;
