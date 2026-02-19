@@ -1,6 +1,13 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
+  // detect rhythm variant from section heading
+  const section = block.closest('.section');
+  const heading = section?.querySelector('h2');
+  if (heading && /rhythm/i.test(heading.textContent)) {
+    block.classList.add('rhythms');
+  }
+
   /* change to ul, li */
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {

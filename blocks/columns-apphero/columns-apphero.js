@@ -39,6 +39,30 @@ export default function decorate(block) {
     });
   });
 
+  // Merge badge link paragraphs into a single flex container
+  // DA authoring puts each link in its own <p>, so we collect them
+  const textCol = [...block.querySelectorAll(':scope > div > div')].find(
+    (col) => !col.classList.contains('columns-apphero-img-col'),
+  );
+  if (textCol) {
+    const badgeParagraphs = [...textCol.querySelectorAll(':scope > p')].filter(
+      (p) => p.querySelector('a picture, a img') && !p.querySelector('img:not(a img)'),
+    );
+    if (badgeParagraphs.length > 1) {
+      const container = document.createElement('div');
+      container.className = 'columns-apphero-badges';
+      badgeParagraphs[0].before(container);
+      badgeParagraphs.forEach((p) => {
+        [...p.querySelectorAll('a')].forEach((a) => container.appendChild(a));
+        p.remove();
+      });
+      // remove leftover empty paragraphs between badges
+      [...textCol.querySelectorAll(':scope > p')].forEach((p) => {
+        if (!p.textContent.trim() && !p.querySelector('img')) p.remove();
+      });
+    }
+  }
+
   // Move carousel column to main level for page-wide two-column layout
   const imgCol = block.querySelector('.columns-apphero-img-col');
   if (imgCol) {

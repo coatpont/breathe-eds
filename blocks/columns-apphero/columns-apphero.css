@@ -77,8 +77,10 @@
 }
 
 /* App store badges */
+.columns-apphero-badges,
 .columns-apphero p:has(a:any-link) {
   display: flex;
+  align-items: center;
   gap: 16px;
   padding: 24px;
   background-color: var(--color-card);
@@ -86,6 +88,7 @@
   margin-top: 14px;
 }
 
+.columns-apphero-badges a:any-link,
 .columns-apphero a:any-link {
   display: inline-block;
 }
