@@ -38,4 +38,16 @@ export default function decorate(block) {
       }
     });
   });
+
+  // Move carousel column to main level for page-wide two-column layout
+  const imgCol = block.querySelector('.columns-apphero-img-col');
+  if (imgCol) {
+    const section = block.closest('.section');
+    if (section) {
+      const rail = document.createElement('div');
+      rail.className = 'phone-rail';
+      rail.appendChild(imgCol);
+      section.after(rail);
+    }
+  }
 }
