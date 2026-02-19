@@ -6,8 +6,8 @@
 }
 
 .columns-apphero h1 {
-  margin-top: 16px;
-  margin-bottom: 18px;
+  margin-top: 10px;
+  margin-bottom: 12px;
   font-size: var(--heading-font-size-xxl);
   font-weight: 700;
   line-height: 1.6;
@@ -77,14 +77,21 @@
 }
 
 /* App store badges */
+.columns-apphero p:has(a:any-link) {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  background-color: var(--color-card);
+  border-radius: var(--radius-default);
+  margin-top: 14px;
+}
+
 .columns-apphero a:any-link {
   display: inline-block;
-  margin-right: 12px;
-  margin-bottom: 8px;
 }
 
 .columns-apphero a:any-link img {
-  height: 48px;
+  height: 64px;
   width: auto;
   max-width: none;
   border-radius: 0;
