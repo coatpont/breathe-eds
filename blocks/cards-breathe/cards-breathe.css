@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, 480px);
   gap: 22px;
 }
 
@@ -42,35 +42,24 @@
 
 .cards-breathe > ul > li img {
   width: 100%;
-  height: 160px;
+  height: 270px;
   object-fit: cover;
   display: block;
 }
 
 /* Rhythm variant */
-.cards-breathe.rhythms > ul {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
 .cards-breathe.rhythms > ul > li {
-  overflow: visible;
-  padding: 18px;
   text-align: center;
 }
 
 .cards-breathe.rhythms > ul > li img {
   width: 100%;
-  height: 120px;
-  border-radius: 16px;
-  margin-bottom: 12px;
-}
-
-.cards-breathe.rhythms .cards-breathe-card-image {
-  line-height: normal;
+  height: 270px;
+  border-radius: 0;
 }
 
 .cards-breathe.rhythms .cards-breathe-card-body {
-  padding: 0;
+  padding: 14px 16px 18px;
   display: block;
   text-align: center;
 }
