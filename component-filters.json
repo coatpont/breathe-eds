@@ -1,0 +1,42 @@
+[
+  {
+    "id": "main",
+    "components": [
+      "section"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "cards-breathe",
+      "columns-apphero",
+      "fragment",
+      "hero",
+      "image",
+      "text"
+    ]
+  },
+  {
+    "id": "cards-breathe",
+    "components": [
+      "card-breathe"
+    ]
+  },
+  {
+    "id": "columns-apphero",
+    "components": [
+      "columns-row"
+    ]
+  },
+  {
+    "id": "columns-row",
+    "components": []
+  },
+  {
+    "id": "columns-cell",
+    "components": [
+      "text",
+      "image"
+    ]
+  }
+]
