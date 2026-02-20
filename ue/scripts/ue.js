@@ -24,7 +24,7 @@ const setupObservers = () => {
         const type = mutation.target.classList.contains('cards-breathe-card-image') ? 'cards-image' : mutation.target.attributes['data-aue-component']?.value;
 
         switch (type) {
-          case 'cards-breathe':
+          case 'card-breathe':
             // handle card div > li replacements
             if (addedElements.length === 1 && addedElements[0].tagName === 'UL') {
               const ulEl = addedElements[0];
