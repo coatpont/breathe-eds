@@ -2,12 +2,12 @@
   "definitions": [
     {
       "title": "Columns",
-      "id": "columns",
+      "id": "columns-apphero",
       "model": "columns-apphero",
-      "filter": "columns",
+      "filter": "columns-apphero",
       "plugins": {
         "da": {
-          "name": "columns",
+          "name": "columns-apphero",
           "rows": 1,
           "columns": 2,
           "behaviour": "columns"
