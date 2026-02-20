@@ -3,7 +3,7 @@
     {
       "title": "Columns",
       "id": "columns",
-      "model": "columns",
+      "model": "columns-apphero",
       "filter": "columns",
       "plugins": {
         "da": {
@@ -41,7 +41,7 @@
   ],
   "models": [
     {
-      "id": "columns",
+      "id": "columns-apphero",
       "fields": [
         {
           "component": "number",
@@ -59,7 +59,7 @@
   ],
   "filters": [
     {
-      "id": "columns",
+      "id": "columns-apphero",
       "components": [
         "columns-row"
       ]

@@ -8,12 +8,18 @@
   {
     "id": "section",
     "components": [
-      "cards",
-      "columns",
+      "cards-breathe",
+      "columns-apphero",
       "fragment",
       "hero",
       "image",
       "text"
+    ]
+  },
+  {
+    "id": "cards-breathe",
+    "components": [
+      "card-breathe"
     ]
   },
   {
@@ -23,7 +29,7 @@
     ]
   },
   {
-    "id": "columns",
+    "id": "columns-apphero",
     "components": [
       "columns-row"
     ]

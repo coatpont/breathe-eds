@@ -34,8 +34,8 @@
     {
       "id": "section",
       "components": [
-        "cards",
-        "columns",
+        "cards-breathe",
+        "columns-apphero",
         "fragment",
         "hero",
         "image",

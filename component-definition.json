@@ -56,6 +56,43 @@
       "id": "blocks",
       "components": [
         {
+          "title": "Cards Breathe",
+          "id": "cards-breathe",
+          "model": "cards-breathe",
+          "filter": "cards-breathe",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Card",
+          "id": "card-breathe",
+          "model": "card-breathe",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1)>picture>img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Cards",
           "id": "cards",
           "model": "cards",
@@ -95,7 +132,7 @@
         {
           "title": "Columns",
           "id": "columns",
-          "model": "columns",
+          "model": "columns-apphero",
           "filter": "columns",
           "plugins": {
             "da": {
